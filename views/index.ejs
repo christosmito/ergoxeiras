@@ -1,0 +1,131 @@
+<%- include("includes/head.ejs") %>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+  <%- include("includes/navigation.ejs") %>  
+
+    <div id="bg-container">
+      <div id="backgroun-image">
+        <% if(error) { %>
+          <% error.forEach( e => { %>
+              <p id="error"><%= e.msg %></p>
+          <% }) %>
+        <% } %>
+        <h1 id="title">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </h1>
+        <h2 id="sub-title">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat magnam iste nostrum quasi facilis amet labore! Repellat magnam iste nostrum quasi facilis amet labore!
+        </h2>
+        <!-- <a href="#">Εργα</a> -->
+        <div id="scroll"> 
+          <i class="far fa-arrow-alt-circle-down fa-4x"></i>
+        </div>
+      </div>
+    </div> 
+
+    <!-- <div id="scroll"> 
+      <i class="far fa-arrow-alt-circle-down fa-4x"></i>
+    </div> -->
+
+  <div id="categories">
+    <h2>ΚΑΤΗΓΟΡΙΕΣ ΕΡΓΩΝ</h2>
+
+    <div id="categories-container">
+      <div>
+        <a href="categories/category1"><img src="images/carving.jpg" alt=""></a>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis eum accusamus non fuga error nisi</p>
+      </div>
+      <div>
+        <a href="/categories/category2"><img src="images/carving.jpg" alt=""></a>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis eum accusamus non fuga error nisi</p>
+      </div>
+      <div>
+        <a href="/categories/category3"><img src="images/carving.jpg" alt=""></a>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis eum accusamus non fuga error nisi</p>
+      </div>
+    </div>
+
+  </div>
+  
+  <div id="recent-projects-container">
+    <h2 id="new-projects">
+      ΠΡΟΣΦΑΤΑ ΕΡΓΑ 
+    </h2>
+  
+    <div id="recent-projects">
+      <div>
+        <img id="recent-projects-img-container" data-aos="zoom-out" data-aos-duration="1500" src="<%= images[images.length - 1].imageUrl %>" alt="">
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, vitae! Beatae, doloremque et fugiat molestias voluptas repudiandae dicta culpa possimus asperiores cumque, harum odit quam corrupti id illo magni alias?
+      </p>
+      <div id="div-change">
+        <img id="recent-projects-img-container" data-aos="zoom-out" data-aos-duration="1500" src="<%= images[images.length - 2].imageUrl %>" alt="">
+      </div>
+      <p id="p-change">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, vitae! Beatae, doloremque et fugiat molestias voluptas repudiandae dicta culpa possimus asperiores cumque, harum odit quam corrupti id illo magni alias?
+      </p>
+      <div>
+        <img id="recent-projects-img-container" data-aos="zoom-out" data-aos-duration="1500" src="<%= images[images.length - 3].imageUrl %>" alt="">
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, vitae! Beatae, doloremque et fugiat molestias voluptas repudiandae dicta culpa possimus asperiores cumque, harum odit quam corrupti id illo magni alias?
+      </p>
+    </div>
+  </div>
+
+  <div id="communication-main-container">
+
+    <h2>ΕΠΙΚΟΙΝΩΝΙΣΤΕ ΜΑΖΙ ΜΑΣ</h2>
+
+    <div id="communication-container">
+      <div id="left-box">
+        <h3>Τηλεφωνο</h3>
+        <p>1234567891</p>
+        <h3>E-mail</h3>
+        <p>abc@abc.com</p>
+      </div>
+      <div id="right-box">
+        <form action="/send-email" method="POST" novalidate>
+          <div class="form-group">
+            <label for="name">ΟΝΟΜΑ</label>
+            <input type="text" class="form-control" name="name">
+          </div>
+          <div class="form-group">
+            <label for="last">ΕΠΙΘΕΤΟ</label>
+            <input type="text" class="form-control" name="last">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">EMAIL</label>
+            <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <label for="message">ΜΗΝΥΜΑ</label>
+            <textarea name="message" placeholder="Γραψτε το μηνυμα σας εδω" id="text"  rows="7"></textarea>
+          </div>
+          <button type="submit" class="btn btn-dark btn-lg">Αποστολη</button>
+          <input type="hidden" name="_csrf" value="<%= csrf %>">
+        </form>
+      </div>
+    </div>
+    
+</div>
+
+<%- include("includes/footer.ejs") %>
+
+  <script>
+    AOS.init();
+  </script>
+
+   <script type="text/javascript" src="js/main.js" ></script>
+
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
+
+
+</body>
+</html>

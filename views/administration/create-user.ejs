@@ -1,0 +1,41 @@
+<%- include("../includes/head.ejs") %>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/create-user-style.css">
+</head>
+
+<body>
+    <%- include("../includes/navigation.ejs") %> 
+
+    <h1>Δημιουργια χρηστη</h1>
+    <hr>
+
+    
+    <% if(error) { %>
+        <% error.forEach( e => { %>
+            <p id="error"><%= e.msg %></p>
+        <% }) %>
+    <% } %>
+
+    <div id="container">
+        <form method="POST" action="" novalidate>
+            <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" class="form-control" name="email">
+            </div>
+            <div class="form-group">
+            <label for="password">Κωδικος</label>
+            <input type="password" class="form-control" name="password">
+            </div>
+            <div class="form-group">
+            <label for="exampleInputEmail1">Επιβεβαιωση κωδικου</label>
+            <input type="password" class="form-control" name="confirmPassword">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-dark btn-lg text-center">Δημιουργια</button>
+            </div>
+            <input type="hidden" name="_csrf" value="<%= csrf %>">
+        </form>
+        <p>Αν εχετε λογαρισμο συνδεθειτε <a href="/admin/login">εδω</a></p>
+    </div>
+
+</body>

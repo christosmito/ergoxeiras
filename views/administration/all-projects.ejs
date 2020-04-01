@@ -1,0 +1,18 @@
+<%- include("../includes/head.ejs") %>
+</head>
+
+<body>
+    <%- include("../includes/navigation.ejs") %> 
+
+    <h1>Προβολή όλων των έργων σας</h1>
+    <hr>
+    <% if(images) { %>
+        <% images.forEach( image => { %>
+            <div>
+                <img src="/<%= image.imageUrl %>" alt="">
+                <p><%= image.description %></p>
+            </div>
+        <% }) %>
+    <% } %>    
+
+</body>
