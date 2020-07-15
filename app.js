@@ -52,7 +52,10 @@ app.use(flash());
 app.use(helmet());
 app.use(compression());
 
-mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0-rx7oj.mongodb.net/${process.env.MONGO_NAME}?retryWrites=true&w=majority`, { useNewUrlParser: true });
+mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0-rx7oj.mongodb.net/${process.env.MONGO_NAME}?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+    .then(() => {
+        console.log("Connected to DataBase");
+    });
 
 //middleware to provide csrf token on req.locals
 app.use((req, res, next) => {

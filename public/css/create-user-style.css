@@ -9,11 +9,17 @@ h1 {
     margin: 0 auto;
 }
 
+#container form {
+    max-width: 800px;
+    max-height: 400px;
+    margin: 0 auto;
+}
+
 #container button {
     width: 100%;
     margin-top: 1.2rem;
 }
 
 #container p {
-    margin-top: 1.2rem;
+    margin: 1.2rem auto 0 auto;
 }
