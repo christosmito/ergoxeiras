@@ -8,41 +8,80 @@ body {
 	letter-spacing: 2px;
 }
 
-#nav-container {
-	background-color: rgb(61, 61, 61);
-}
-
-#logo {
-	font-size: 1.5rem;
-	font-weight: 700;
-	color: white;
-}
-
 .navbar {
 	width: 80%;
 	margin: 0 auto;
-	padding-left: 0 !important;
-}
-
-.navbar a {
-	color: white;
-	letter-spacing: 3px;
-}
-
-.navbar-light .navbar-nav .nav-link { /*change navigation bar color link*/
-    color: white;
-}
-
-.navbar-light .navbar-nav .nav-link:hover {
-	color: rgb(231, 231, 231);
-}
-
-li button {
-	background: none!important;
-	border: none;
-	color: white;
+  }
+  
+  .navbar a {
+	text-decoration: none;
+  }
+  
+  #flex-container {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+  }
+  
+  #logo {
+	align-self: center;
+  }
+  
+  .bar-container {
+	display: inline-block;
 	cursor: pointer;
-}
+  }
+  
+  .bar1, .bar2, .bar3 {
+	width: 35px;
+	height: 5px;
+	background-color: #333;
+	margin: 6px 0;
+	transition: 0.4s;
+  }
+  
+  /* Rotate first bar */
+  .change .bar1 {
+	-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+	transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  /* Fade out the second bar */
+  .change .bar2 {opacity: 0;}
+  
+  /* Rotate last bar */
+  .change .bar3 {
+	-webkit-transform: rotate(45deg) translate(-8px, -8px);
+	transform: rotate(45deg) translate(-8px, -8px);
+  }
+  
+  .menu {
+	display: none;
+  }
+
+  .menu ul {
+	  padding: 0;
+	  margin: 0;
+  }
+  
+  .menu ul li {
+	list-style-type: none; 
+  }
+  
+  .menu ul li a {
+	display: block;
+	color: black;
+	padding: 1rem 0 1rem 0;
+	text-align: center;
+  }
+  
+  .show {
+	width: 100%;
+	display: block;
+	z-index: 100;
+	height: 50vh;
+	border-top: 1px solid black;
+  }
 
 #main-container {
 	background-color: rgb(231, 231, 231);
@@ -165,6 +204,11 @@ li button {
 }
 
 @media (min-width: 60rem) {
+
+	#categories {
+		height: 100vh;
+	}
+
 	#categories-container {
 		display: flex;
 		justify-content: space-between;
@@ -273,7 +317,7 @@ li button {
 
 #recent-projects p {
 	  margin-bottom: 1.5rem;
-	  width: 80%;
+	  /* width: 80%; */
 	  justify-self: center;
 	  align-self: center;
 }
@@ -303,6 +347,21 @@ li button {
 	background-image: radial-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../images/communication.jpg");
 	background-size: cover;
 	background-attachment: fixed;
+}
+
+@media (min-width: 60rem) {
+
+	#communication-main-container {
+		background: radial-gradient(#16222A, #3A6073);
+	}
+
+	#communication-main-container h3 {
+		text-align: center;
+		color: lightgray;
+		font-size: 0.8rem;
+	}
+
+
 }
 
 #communication-main-container h2 {
@@ -339,11 +398,30 @@ li button {
 	#communication-container {
 		display: grid;
 		grid-template-columns: 50% 50%;
-		width: 50%;
+		width: 80%;
 		margin: 2rem auto 0 auto;
 		padding: 1.5rem;
 		color: white;
 	}	
+
+	#left-box {
+		background-image: url("../images/img-01.png");
+		background-repeat: no-repeat;
+	}
+
+	#communication-container form div {
+		padding: 0.5rem 0.5rem 0.5rem 0;
+	}
+
+	#communication-container form div input {
+		width: 80%;
+		padding: 0.5rem;
+	}
+
+	#communication-container form button {
+		padding: 0.5rem;
+		border: none;
+	}
 }
 
 #left-box {
@@ -361,7 +439,12 @@ li button {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-	}	
+	}
+	
+	button {
+		color: black;
+		background-color: white;
+	}
 }
 
 #left-box h3,p {
@@ -390,17 +473,17 @@ li button {
 }
 
 textarea {
-	width: 100%;
+	width: 80%;
+	padding: 0.5rem;
 }
 
   footer{
-	background-color: black;
+	
   }
 
 footer div {
 	/* width: 80%;
 	margin: 0 auto 1.5rem auto; */
-	color: white;
 	padding: 1rem;
 	font-size: 1rem;
 	text-align: center;
@@ -413,7 +496,6 @@ footer div {
 }
 
 footer div i {
-	color: white;
 }
 
 address {
