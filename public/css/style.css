@@ -6,11 +6,20 @@ body {
 	background-color: rgb(231, 231, 231);
 	font-family: 'Roboto', sans-serif;
 	letter-spacing: 2px;
+	margin: 0;
 }
 
 .navbar {
 	width: 80%;
 	margin: 0 auto;
+  }
+
+  @media(min-width: 60rem) {
+	  .navbar {
+		  display: flex;
+		  justify-content: space-between;
+		  padding: 0.7rem;
+	  }
   }
   
   .navbar a {
@@ -30,6 +39,18 @@ body {
   .bar-container {
 	display: inline-block;
 	cursor: pointer;
+  }
+
+  @media(min-width: 60rem) {
+	  .bar-container {
+		  display: none;
+	  }
+
+	  #flex-container {
+		display: auto;
+		width: auto;
+		justify-content: auto;
+	  }
   }
   
   .bar1, .bar2, .bar3 {
@@ -74,6 +95,28 @@ body {
 	padding: 1rem 0 1rem 0;
 	text-align: center;
   }
+
+  @media(min-width:	60rem) {
+	.menu {
+		display: block;
+	}
+
+	.menu ul {
+		display: flex;
+		align-items: center;	}
+
+	.menu ul li {
+		padding: 0.5rem;
+	}
+
+	.menu ul li a {
+		display: inline;
+	}
+
+	.fab {
+		color: blue;
+	}
+}
   
   .show {
 	width: 100%;
@@ -180,7 +223,7 @@ body {
   animation: mover 0.7s infinite  alternate;
 }
 #scroll i {
-	color: white;
+	color: lightgrey;
   -webkit-animation: mover 0.7s infinite  alternate;
   animation: mover 0.7s infinite  alternate;
 }
@@ -477,10 +520,6 @@ textarea {
 	padding: 0.5rem;
 }
 
-  footer{
-	
-  }
-
 footer div {
 	/* width: 80%;
 	margin: 0 auto 1.5rem auto; */
@@ -493,9 +532,6 @@ footer div {
 	footer div {
 		font-size: 1.3rem;
 	}
-}
-
-footer div i {
 }
 
 address {
