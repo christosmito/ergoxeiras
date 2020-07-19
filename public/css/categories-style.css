@@ -1,5 +1,6 @@
 body {
     height: 100vh;
+    background: white;
 }
 
 h1 {
@@ -17,20 +18,32 @@ h1 {
 }
 
 #image-container {
-    margin: 4rem;
+    width: 80%;
+    margin: 0 auto;
 }
 
 img {
-    width: 30rem;
-    height: 25rem;
+    width: 100%;
+    height: 15rem;
 }
 
 #image-container figcaption {
     padding: 1.3rem;
 }
 
-/* footer {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-} */
+footer {
+    background-color: rgb(231, 231, 231);
+}
+
+/* media queries */
+
+@media(min-width: 40rem) {
+    #image-container {
+        width: 40%;
+        padding: 3rem;
+    }
+
+    img {
+        height: 20rem;
+    }
+}

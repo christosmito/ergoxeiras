@@ -1,25 +1,61 @@
+body {
+    background: white;
+}
+
 h1 {
     text-align: center;
     padding: 2.5%;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 #container {
     width: 80%;
+    max-width: 600px;
     margin: 0 auto;
 }
 
 #container form {
-    max-width: 800px;
+    max-width: 600px;
     max-height: 400px;
     margin: 0 auto;
 }
 
-#container button {
+#container form div {
     width: 100%;
+    margin: 1.5rem 0;
+}
+
+#container form div input {
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1rem;
+}
+
+#container button {
+    width: 50%;
     margin-top: 1.2rem;
 }
 
 #container p {
-    margin: 1.2rem auto 0 auto;
+    margin: 1.6rem auto 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* media queries */
+
+@media(min-width: 40rem) {
+    #container form div input, select, textarea {
+        font-size: 1.3rem;
+    }
+
+    #container form label {
+        font-size: 1.3rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
 }

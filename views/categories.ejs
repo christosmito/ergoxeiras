@@ -4,10 +4,55 @@
 </head>
 
 <body>
-    <%- include("includes/navigation.ejs") %> 
+
+    <div id="nav-container">
+        <nav class="navbar">
+              <div id="flex-container">
+                <a id="logo" class="navbar-brand" href="/">ErgoXeiras</a>
+              
+                <div class="bar-container" onclick="myFunction(this)">
+                  <div class="bar1"></div>
+                  <div class="bar2"></div>
+                  <div class="bar3"></div>
+                </div>
+              </div>
+          
+              <div class="menu">
+                  <ul>
+                      <li>
+                        <a href="/">Αρχική</a>
+                      </li>
+                      <li>
+                        <a href="/#categories">Έργα</a>
+                      </li>
+                      <!-- <li class="nav-item">
+                      <a class="nav-link" href="#">Σχετικα</a>
+                      </li> -->
+                      <li>
+                        <a href="/#communication-main-container">Επικοινωνία</a>
+                      </li>
+                      <li>
+                        <a href="https://www.facebook.com/ergoxeiras" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a><!--target="_blank" opens a new window-->
+                      </li>
+                      <% if(isLoggedIn) { %>
+                            <li class="nav-item">
+                                <a class="nav-link" href="admin/logout">Αποσύνδεση</a>
+                            </li>
+                        <% } %>
+                  </ul>
+              </div>
+        </nav>
+      </div>
+        <script>
+      function myFunction(x) {
+        x.classList.toggle("change");
+        const menu = document.querySelector(".menu");
+        console.log(menu);
+        menu.classList.toggle("show");
+      }
+      </script>
 
     <h1><%= pageTitle %></h1>
-    <hr>
 
     <% if(images) { %>
         <div id="grid">

@@ -91,7 +91,7 @@ exports.getLogout = (req, res, next) => {
 }
 
 exports.getAddProject = (req, res, next) => {
-    res.render("administration/add-project", {
+    res.render("administration/admin", {
         pageTitle: "Προσθήκη Έργου",
         isLoggedIn: req.session.isLoggedIn,
         error: ""

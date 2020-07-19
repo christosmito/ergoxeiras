@@ -9,17 +9,14 @@ body {
 	margin: 0;
 }
 
+#nav-container {
+	padding: 0.5rem;
+	background-color: white;
+}
+
 .navbar {
 	width: 80%;
 	margin: 0 auto;
-  }
-
-  @media(min-width: 60rem) {
-	  .navbar {
-		  display: flex;
-		  justify-content: space-between;
-		  padding: 0.7rem;
-	  }
   }
   
   .navbar a {
@@ -39,18 +36,6 @@ body {
   .bar-container {
 	display: inline-block;
 	cursor: pointer;
-  }
-
-  @media(min-width: 60rem) {
-	  .bar-container {
-		  display: none;
-	  }
-
-	  #flex-container {
-		display: auto;
-		width: auto;
-		justify-content: auto;
-	  }
   }
   
   .bar1, .bar2, .bar3 {
@@ -96,33 +81,15 @@ body {
 	text-align: center;
   }
 
-  @media(min-width:	60rem) {
-	.menu {
-		display: block;
-	}
-
-	.menu ul {
-		display: flex;
-		align-items: center;	}
-
-	.menu ul li {
-		padding: 0.5rem;
-	}
-
-	.menu ul li a {
-		display: inline;
-	}
-
-	.fab {
-		color: blue;
-	}
-}
+  .fab {
+	color: blue;
+  }
   
   .show {
 	width: 100%;
+	height: 100vh;
 	display: block;
 	z-index: 100;
-	height: 50vh;
 	border-top: 1px solid black;
   }
 
@@ -191,26 +158,14 @@ body {
 	/* text-align: center; */
 }
 
-@media (min-width: 40rem) {
-	#title {
-		font-size: 1.3rem;
-	}
-}
-
 #sub-title {
 	/* text-align: center; */
 	/* font-size: 1.5rem; */
-	font-size: 0.8rem;
+	font-size: 0.9rem;
 	/* width: 50%; */
 	width: 80%;
 	margin: 0 auto;
 	color: white;
-}
-
-@media (min-width: 40rem) {
-	#sub-title {
-		font-size: 1rem;
-	}
 }
 
 #scroll {
@@ -235,35 +190,9 @@ body {
 	/* margin-top: 1.5rem; */
 }
 
-@media (min-width: 40rem) {
-	#categories h2 {
-		font-size: 1.3rem;
-	}
-}
-
 #categories-container {
 	width: 80%;
 	margin: 0 auto;
-}
-
-@media (min-width: 60rem) {
-
-	#categories {
-		height: 100vh;
-	}
-
-	#categories-container {
-		display: flex;
-		justify-content: space-between;
-		/* align-items: center; */
-		height: 60vh;
-	}
-}
-
-@media (min-width: 60rem) {
-	#categories-container div {
-		width: 30%;
-	}
 }
 
 #categories-container img {
@@ -332,12 +261,6 @@ body {
 	  font-size: 1rem;
 }
 
-@media (min-width: 40rem) {
-	#new-projects {
-		font-size: 1.3rem;
-	}
-}
-
 #recent-projects {
 	
 	/* display: grid;
@@ -349,32 +272,18 @@ body {
 	transition: all 0.5s;
 }
 
-@media (min-width: 60rem) {
-	#recent-projects {
-		display: grid;
-		grid-template-columns: 50% 50%;
-		grid-template-rows: 1fr 1fr 1fr;
-		grid-row-gap: 8rem;
-	}
-}
-
 #recent-projects p {
 	  margin-bottom: 1.5rem;
 	  /* width: 80%; */
 	  justify-self: center;
 	  align-self: center;
+	  font-size: 0.9rem;
 }
 
 #recent-projects-img-container {
 	overflow: hidden;
 	width: 100%;
 	height: 15rem;
-}
-
-@media (min-width: 40rem) {
-	#recent-projects-img-container {
-		height: 20rem;
-	}
 }
 
 #recent-projects-img-container:hover {
@@ -392,33 +301,18 @@ body {
 	background-attachment: fixed;
 }
 
-@media (min-width: 60rem) {
-
-	#communication-main-container {
-		background: radial-gradient(#16222A, #3A6073);
-	}
-
-	#communication-main-container h3 {
-		text-align: center;
-		color: lightgray;
-		font-size: 0.8rem;
-	}
-
-
-}
-
 #communication-main-container h2 {
 	text-align: center;
-	padding: 1.5rem;
+	padding: 1rem;
 	font-size: 1rem;
 	color: white;
 	margin: 0;
 }
 
-@media (min-width: 40rem) {
-	#communication-main-container h2 {
-		font-size: 1.3rem;
-	}
+#communication-main-container h3 {
+	color: white;
+    text-align: center;
+    font-size: 0.9rem;
 }
 
 #communication-container {
@@ -430,41 +324,14 @@ body {
 	color: white;
 }
 
-@media (min-width: 40rem) {
-	#communication-container {
-		width: 40%;
-		margin: 0 0 0 10%;
-	}
+#communication-container form div {
+	padding: 0.5rem 0.5rem 0.5rem 0;
 }
 
-@media (min-width: 60rem) {
-	#communication-container {
-		display: grid;
-		grid-template-columns: 50% 50%;
-		width: 80%;
-		margin: 2rem auto 0 auto;
-		padding: 1.5rem;
-		color: white;
-	}	
-
-	#left-box {
-		background-image: url("../images/img-01.png");
-		background-repeat: no-repeat;
-	}
-
-	#communication-container form div {
-		padding: 0.5rem 0.5rem 0.5rem 0;
-	}
-
-	#communication-container form div input {
-		width: 80%;
-		padding: 0.5rem;
-	}
-
-	#communication-container form button {
-		padding: 0.5rem;
-		border: none;
-	}
+#communication-container form div input {
+	width: 90%;
+	padding: 0.5rem;
+	font-size: 1.5rem;
 }
 
 #left-box {
@@ -476,28 +343,8 @@ body {
 	margin-bottom: 2.5rem;
 }
 
-@media (min-width: 60rem) {
-	#left-box {
-		/*background-image: url("communication.jpg");*/
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
-	
-	button {
-		color: black;
-		background-color: white;
-	}
-}
-
 #left-box h3,p {
 	font-size: 1rem;
-}
-
-@media (min-width: 40rem) {
-	#left-box h3,p {
-		font-size: 1.3rem;
-	}
 }
 
 #right-box form {
@@ -509,15 +356,15 @@ body {
 	font-size: 1rem;
 }
 
-@media (min-width: 40rem) {
-	#right-box label {
-		font-size: 1.3rem;
-	}
+textarea {
+	width: 90%;
+	padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+	font-size: 1rem;
 }
 
-textarea {
-	width: 80%;
-	padding: 0.5rem;
+button {
+	padding: 0.8rem;
+	font-size: 1rem;
 }
 
 footer div {
@@ -526,12 +373,6 @@ footer div {
 	padding: 1rem;
 	font-size: 1rem;
 	text-align: center;
-}
-
-@media (min-width: 40rem) {
-	footer div {
-		font-size: 1.3rem;
-	}
 }
 
 address {
@@ -556,15 +397,225 @@ address a {
 	font-weight: 500;
 }
 
-@media (min-width: 60rem) {
+/* media queries */
+
+@media (min-width: 40rem) {
+	footer div {
+		font-size: 1.3rem;
+	}
+
+	button {
+		padding: 1.2rem;
+    	font-size: 1.5rem;
+	}
+
+	#right-box label {
+		font-size: 1.3rem;
+	}
+
+	#left-box h3,p {
+		font-size: 1.3rem;
+	}
+
+	#left-box {
+		display: none;
+	}
+
+	#communication-container {
+		width: 80%;
+		margin: 0 0 0 10%;
+	}
+
+	#communication-main-container h3 {
+		font-size: 1.3rem;
+	}
+
+	#communication-main-container h2 {
+		font-size: 1.5rem;
+	}
+
+	#recent-projects-img-container {
+		height: 20rem;
+	}
+
+	#recent-projects p {
+		font-size: 1.3rem;
+	}
+
+	#new-projects {
+		font-size: 1.5rem;
+	}
+
+	#categories h2 {
+		font-size: 1.5rem;
+	}
+
+	#scroll i {
+		font-size: 3rem;
+	}
+
+	#backgroun-image h2 {
+		font-size: 1.3rem;
+    	padding: 0.5rem;
+	}
+
+	#backgroun-image h1 {
+		font-size: 1.8rem;
+	}
+	
+	.menu ul li a {
+		font-size: 1.5rem;
+		padding: 1.5rem;
+	}
+}
+
+@media(min-width: 60rem) {
+	.navbar {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.bar-container {
+		display: none;
+	}
+
+	#flex-container {
+	  display: auto;
+	  width: auto;
+	  justify-content: auto;
+	}
+
+	.menu {
+		display: block;
+	}
+
+	.menu ul {
+		display: flex;
+		align-items: center;	}
+
+	.menu ul li {
+		padding: 0.5rem;
+	}
+
+	.menu ul li a {
+		display: inline;
+		font-size: 1rem;
+	}
+
+	.fab {
+		color: blue;
+	}
+
+	#categories {
+		height: 100vh;
+	}
+
+	#categories-container {
+		display: flex;
+		justify-content: space-between;
+		/* align-items: center; */
+		height: 60vh;
+	}
+
+	#categories-container div {
+		width: 30%;
+	}
+
+	#categories-container p {
+		font-size: 1rem;
+	}
+
+	#recent-projects {
+		display: grid;
+		grid-template-columns: 50% 50%;
+		grid-template-rows: 1fr 1fr 1fr;
+		grid-row-gap: 8rem;
+	}
+
+	#recent-projects p {
+		font-size: 1rem;
+	}
+
+	#communication-main-container {
+		background: radial-gradient(#16222A, #3A6073);
+	}
+
+	#communication-main-container h3 {
+		text-align: center;
+		color: lightgray;
+		font-size: 0.8rem;
+	}
+
+	#communication-main-container h3 {
+		font-size: 1rem;
+	}
+
+	#communication-container {
+		display: grid;
+		grid-template-columns: 50% 50%;
+		width: 80%;
+		height: 73vh;
+		margin: 2rem auto 0 auto;
+		padding: 1.5rem;
+		color: white;
+	}	
+
+	#left-box {
+		background-image: url("../images/img-01.png");
+		background-repeat: no-repeat;
+	}
+
+	#communication-container form div {
+		padding: 0.5rem 0.5rem 0.5rem 0;
+	}
+
+	#communication-container form div input {
+		width: 80%;
+		padding: 0.5rem;
+		font-size: 1rem;
+	}
+
+	#communication-container form button {
+		padding: 0.5rem;
+		border: none;
+	}
+
+	#left-box {
+		/*background-image: url("communication.jpg");*/
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	
+	button {
+		color: black;
+		background-color: white;
+	}
+
+	textarea {
+		width: 80%;
+	}
+
+	button {
+		padding: 1.2rem;
+    	font-size: 1rem;
+	}
+
+	footer div {
+		font-size: 1rem;
+	}
+
+	#p-change {
+		grid-column-start: 1;
+		grid-row-start: 2;
+	}
 	#div-change {
 		grid-column-start: 2;
 	}
 }
 
-@media (min-width: 60rem) {
-	#p-change {
-		grid-column-start: 1;
-		grid-row-start: 2;
+@media(min-width: 75rem) {
+	.navbar, #title, #sub-title, #categories-container, #recent-projects, #communication-container {
+		max-width: 1400px;
 	}
 }

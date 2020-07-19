@@ -28,8 +28,8 @@ router.post("/login",
 
 router.get("/logout", adminController.getLogout);
 
-router.get("/add-project", isAuth, adminController.getAddProject);
-router.post("/add-project", adminController.postAddProject);
+router.get("/admin", isAuth, adminController.getAddProject);
+router.post("/admin", adminController.postAddProject);
 
 
 module.exports = router;

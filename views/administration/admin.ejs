@@ -1,22 +1,80 @@
 <%- include("../includes/head.ejs") %>
-<link rel="stylesheet" href="../../css/admin-style.css">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/create-user-style.css">
 </head>
 
 <body>
-    <%- include("../includes/navigation.ejs") %> 
+    <div id="nav-container">
+        <nav class="navbar">
+              <div id="flex-container">
+                <a id="logo" class="navbar-brand" href="/">ErgoXeiras</a>
+              
+                <div class="bar-container" onclick="myFunction(this)">
+                  <div class="bar1"></div>
+                  <div class="bar2"></div>
+                  <div class="bar3"></div>
+                </div>
+              </div>
+          
+              <div class="menu">
+                  <ul>
+                      <li>
+                        <a href="/">Αρχική</a>
+                      </li>
+                      <li>
+                        <a href="/#categories">Έργα</a>
+                      </li>
+                      <!-- <li class="nav-item">
+                      <a class="nav-link" href="#">Σχετικα</a>
+                      </li> -->
+                      <li>
+                        <a href="/#communication-main-container">Επικοινωνία</a>
+                      </li>
+                      <li>
+                        <a href="https://www.facebook.com/ergoxeiras" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a><!--target="_blank" opens a new window-->
+                      </li>
+                      <% if(isLoggedIn) { %>
+                            <li class="nav-item">
+                                <a class="nav-link" href="admin/logout">Αποσύνδεση</a>
+                            </li>
+                        <% } %>
+                  </ul>
+              </div>
+        </nav>
+      </div>
+        <script>
+      function myFunction(x) {
+        x.classList.toggle("change");
+        const menu = document.querySelector(".menu");
+        console.log(menu);
+        menu.classList.toggle("show");
+      }
+      </script>
+      
+    <h1>Προσθήκη Έργου</h1>
 
-    <h1>Καλως ηρθατε στην σελιδα διαχειρησης</h1>
-    <hr>
-    <div id="main-container">
-        <div class="container">
-            <p>Για την δημιουργία νέου χρήστη ακολουθήστε τον παρακάτω σύνδεσμο</p>
-            <a href="/admin/create-user">Δημιουργια χρηστη</a>
-        </div>
-    
-        <div class="container">
-            <p>Για την διαχείρηση των έργων σας ακολουθήστε τον παρακάτω σύνδεσμο</p>
-            <a href="/admin/add-project">Διαχειρηση εργων</a>
-        </div>
+    <div id="container">
+        <form method="POST" action="" enctype="multipart/form-data" novalidate>
+            <div class="form-group">
+            <label for="image">Επιλέξτε εικόνα</label>
+            <input type="file" class="form-control" name="image">
+            </div>
+            <div class="form-group">
+            <p for="category">Επιλέξτε κατηγορία</p>
+            <select name="category" id="category">
+                <option value="category1">category 1</option>
+                <option value="category2">category 2</option>
+                <option value="category3">category 3</option>
+            </select>
+            </div>
+            <div class="form-group">
+            <textarea name="description" placeholder="Περιγραφη" id="text" cols="50" rows="5"></textarea>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-dark btn-lg text-center">Ανέβασμα</button>
+            </div>
+            <input type="hidden" name="_csrf" value="<%= csrf %>">
+        </form>
     </div>
 
 </body>

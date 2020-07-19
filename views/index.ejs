@@ -6,25 +6,25 @@
 <body>
   <%- include("includes/navigation.ejs") %>  
 
-    <div id="bg-container">
-      <div id="backgroun-image">
-        <% if(error) { %>
-          <% error.forEach( e => { %>
-              <p id="error"><%= e.msg %></p>
-          <% }) %>
-        <% } %>
-        <h1 id="title">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </h1>
-        <h2 id="sub-title">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat magnam iste nostrum quasi facilis amet labore! Repellat magnam iste nostrum quasi facilis amet labore!
-        </h2>
-        <!-- <a href="#">Εργα</a> -->
-        <div id="scroll"> 
-          <i class="far fa-arrow-alt-circle-down fa-2x"></i>
-        </div>
+  <div id="bg-container">
+    <div id="backgroun-image">
+      <% if(error) { %>
+        <% error.forEach( e => { %>
+            <p id="error"><%= e.msg %></p>
+        <% }) %>
+      <% } %>
+      <h1 id="title">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </h1>
+      <h2 id="sub-title">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat magnam iste nostrum quasi facilis amet labore! Repellat magnam iste nostrum quasi facilis amet labore!
+      </h2>
+      <!-- <a href="#">Εργα</a> -->
+      <div id="scroll"> 
+        <i class="far fa-arrow-alt-circle-down fa-2x"></i>
       </div>
-    </div> 
+    </div>
+  </div> 
 
     <!-- <div id="scroll"> 
       <i class="far fa-arrow-alt-circle-down fa-4x"></i>
@@ -47,7 +47,6 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis eum accusamus non fuga error nisi</p>
       </div>
     </div>
-
   </div>
   
   <div id="recent-projects-container">
